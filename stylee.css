@@ -20,9 +20,11 @@ h3{
 }
 .nav-right{
     margin-left: 450px;
+    cursor: pointer;
 }
 .nav-left{
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .row, .row{
