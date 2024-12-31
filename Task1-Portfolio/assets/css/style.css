@@ -2,7 +2,7 @@
 .container{
     position: relative;
     border: 2px double black;
-    margin-top: 10px;
+    margin-top: 5px;
     height: 100px;
     border-radius: 20px;
     height: 100%;
@@ -10,9 +10,8 @@
 }
 
 /* styling of nav bar */
-.nav{
-    margin-top: 10px;
-    height: 35px;
+.container-fluid{
+    height: 45px;
     border: 2px double black;
     align-items: center;
     border-radius: 10px;
@@ -24,12 +23,16 @@ h3{
 
 /* positioning the icons on the navbar */
 .nav-right{
-    margin-left: 450px;
-    cursor: pointer;
-}
-.nav-left{
     margin-left: 10px;
     cursor: pointer;
+}
+/* styling the search bar */
+#searchbar{
+    background-color: aliceblue;
+}
+#searchbtn{
+    color: black;
+    border-color: black;
 }
 
 /* alignment of divs in the rows*/
@@ -114,4 +117,19 @@ h3{
 /* styling the icons in the right sidebar in row 2  */
 #icon1, #icon2, #icon3{
     cursor: pointer;
+}
+
+/* making the page responsive */
+@media (max-width: 769px ){
+    #inner1, #inner3{
+        opacity: 0;
+    }
+    ul{
+        font-size: smaller;
+    }
+}
+@media (max-width: 514px){
+    ul, h5{
+        opacity: 0;
+    }
 }
