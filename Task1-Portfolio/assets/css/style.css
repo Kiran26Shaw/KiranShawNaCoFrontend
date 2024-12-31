@@ -1,1 +1,103 @@
+.container{
+    position: relative;
+    border: 2px double black;
+    margin-top: 10px;
+    height: 100px;
+    border-radius: 20px;
+    height: 100%;
+    padding-bottom: 10px;
+}
+.nav{
+    margin-top: 10px;
+    height: 35px;
+    border: 2px double black;
+    align-items: center;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+h3{
+    margin-left: 450px;
+}
+.nav-right{
+    margin-left: 450px;
+    cursor: pointer;
+}
+.nav-left{
+    margin-left: 10px;
+    cursor: pointer;
+}
 
+.row, .row{
+    /* padding: 10px; */
+    /* width: 90%; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.col-3{
+    /* padding: 10px; */
+    margin-top: 10px;
+    border: 2px double black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+#r1, #r2, #r3{
+    height: 400px;
+}
+#r4, #r5, #r6{
+    height: 200px;
+}
+#r1, #r3{
+    width: 250px;
+}
+#r4, #r6{
+    width: 350px;
+}
+#r5{
+    width: 500px;
+    text-align: center;
+    align-content: center;
+}
+#r2{
+    width: 700px;
+}
+
+.g-col-4{
+    display: inline-flex;
+    border: 2px dotted black;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+#inner1, #inner3{
+    height: 50px;
+    width: 200px;
+    background-color: aliceblue;
+}
+#inner2{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: aliceblue;
+}
+.card{
+    width: 230px;
+    height: 150px;
+    margin-bottom: 5px;
+    justify-self: center;
+    text-align: justify;
+    background-color: aliceblue;
+}
+.circ{
+    height: 100px;
+    width: 100px;
+    border: 2px dotted black;
+    border-radius: 100%;
+    justify-self: center;
+    margin-top: 50px;
+    background-color: aliceblue;
+}
+#icon1, #icon2, #icon3{
+    cursor: pointer;
+}
