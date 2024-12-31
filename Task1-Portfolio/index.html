@@ -10,35 +10,58 @@
 </head>
 <body>
     <div class="container">
+        
         <!--nav bar-->
-        <div class="nav">
-            <div class="nav-left">
-                <span class="material-symbols-outlined">
-                    radio_button_unchecked
-                </span>
-            </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">PERSONAL PORTFOLIO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <h3>PERSONAL PORTFOLIO</h3>
-
-            <div class="nav-right">
-                <span class="material-symbols-outlined">
-                    cancel
-                </span>
-                <span class="material-symbols-outlined">
-                    do_not_disturb_on
-                </span>
+                <!--navbar items-->
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <!--seach bar-->
+                    <form class="d-flex" role="search"> 
+                        <input class="form-control me-2" id="searchbar" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" id="searchbtn" type="submit">Search</button>
+                    </form>
+                    <!--icons-->
+                    <span class="navbar-text">
+                        <div class="nav-right">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>
+                            <span class="material-symbols-outlined">
+                                do_not_disturb_on
+                            </span>
+                        </div>
+                    </span>
+                </div>
             </div>
-        </div>
+        </nav>
 
         <!--row 1-->
         <div class="row">
+
             <!--left sidebar in 1st row-->
             <div class="row justify-content-around">
                 <div class="col-3" id="r1">
                   <h1>Personal Portfolio</h1>
                   <div class="circ"></div>
                 </div>
-                
+
                 <!--center content in 1st row-->
                 <div class="col-3" id="r2">
                     <div class="grid text-center">
@@ -54,11 +77,11 @@
                     <div class="row justify-content-evenly">
                         <div class="col-4">
                           <h5>TITLE 1</h5>
-                          <ul>
-                            <li>_____________</li>
-                            <li>_____________</li>
-                            <li>_____________</li>
-                          </ul>
+                            <ul>
+                                <li>_____________</li>
+                                <li>_____________</li>
+                                <li>_____________</li>
+                            </ul>
                         </div>
                         <div class="col-4">
                             <h5>TITLE 2</h5>
@@ -96,6 +119,7 @@
 
         <!--row 2-->
         <div class="row">
+
             <!--left sidebar in 2nd row-->
             <div class="row justify-content-around">
                 <div class="col-3" id="r4">
