@@ -1,3 +1,4 @@
+/* positioning of the portfolio space */
 .container{
     position: relative;
     border: 2px double black;
@@ -7,6 +8,8 @@
     height: 100%;
     padding-bottom: 10px;
 }
+
+/* styling of nav bar */
 .nav{
     margin-top: 10px;
     height: 35px;
@@ -18,6 +21,8 @@
 h3{
     margin-left: 450px;
 }
+
+/* positioning the icons on the navbar */
 .nav-right{
     margin-left: 450px;
     cursor: pointer;
@@ -27,20 +32,22 @@ h3{
     cursor: pointer;
 }
 
-.row, .row{
-    /* padding: 10px; */
-    /* width: 90%; */
+/* alignment of divs in the rows*/
+.row{
     display: flex;
     justify-content: space-evenly;
 }
+
+/* styling the divs */
 .col-3{
-    /* padding: 10px; */
     margin-top: 10px;
     border: 2px double black;
     border-radius: 10px;
     background-color: antiquewhite;
     text-align: center;
 }
+
+/* adjusting size of the divs  */
 #r1, #r2, #r3{
     height: 400px;
 }
@@ -62,6 +69,7 @@ h3{
     width: 700px;
 }
 
+/* styling and alignment of central div in row 1  */
 .g-col-4{
     display: inline-flex;
     border: 2px dotted black;
@@ -81,6 +89,8 @@ h3{
     margin-right: 50px;
     background-color: aliceblue;
 }
+
+/* styling cards inside the right sidebar in row 1  */
 .card{
     width: 230px;
     height: 150px;
@@ -89,6 +99,8 @@ h3{
     text-align: justify;
     background-color: aliceblue;
 }
+
+/* styling the circle inside the left sidebar in row 1  */
 .circ{
     height: 100px;
     width: 100px;
@@ -98,6 +110,8 @@ h3{
     margin-top: 50px;
     background-color: aliceblue;
 }
+
+/* styling the icons in the right sidebar in row 2  */
 #icon1, #icon2, #icon3{
     cursor: pointer;
 }
