@@ -73,24 +73,23 @@ h3{
 }
 
 /* styling and alignment of central div in row 1  */
-.g-col-4{
-    display: inline-flex;
+.p-3{
     border: 2px dotted black;
-    margin-top: 30px;
-    justify-content: space-evenly;
+    margin-top: 20px;
+    width: 250px;
+    justify-self: center;
 }
-#inner1, #inner3{
-    height: 50px;
-    width: 200px;
-    background-color: aliceblue;
-}
-#inner2{
+.p-2{
+    border-radius: 100%;
+    border: 2px dotted black;
     height: 150px;
     width: 150px;
-    border-radius: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
-    background-color: aliceblue;
+    justify-self: center;
+    margin-top: 10px
+}
+.p-4{
+    margin-top: 35px;
+    border: 2px double black;
 }
 
 /* styling cards inside the right sidebar in row 1  */
@@ -117,19 +116,4 @@ h3{
 /* styling the icons in the right sidebar in row 2  */
 #icon1, #icon2, #icon3{
     cursor: pointer;
-}
-
-/* making the page responsive */
-@media (max-width: 769px ){
-    #inner1, #inner3{
-        opacity: 0;
-    }
-    ul{
-        font-size: smaller;
-    }
-}
-@media (max-width: 514px){
-    ul, h5{
-        opacity: 0;
-    }
 }
