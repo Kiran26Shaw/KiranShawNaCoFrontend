@@ -1,119 +1,66 @@
-/* positioning of the portfolio space */
-.container{
-    position: relative;
-    border: 2px double black;
-    margin-top: 5px;
-    height: 100px;
+/* creating borders */
+#r1, #r2, #r3, #r4, #r5, #r6{
+    border: 2px dotted black;
     border-radius: 20px;
-    height: 100%;
-    padding-bottom: 10px;
+    padding: 5px;
 }
 
-/* styling of nav bar */
-.container-fluid{
-    height: 45px;
-    border: 2px double black;
-    align-items: center;
-    border-radius: 10px;
-    background-color: antiquewhite;
-}
-h3{
-    margin-left: 450px;
-}
-
-/* positioning the icons on the navbar */
-.nav-right{
-    margin-left: 10px;
-    cursor: pointer;
-}
-/* styling the search bar */
-#searchbar{
-    background-color: aliceblue;
-}
-#searchbtn{
-    color: black;
-    border-color: black;
-}
-
-/* alignment of divs in the rows*/
-.row{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-/* styling the divs */
-.col-3{
-    margin-top: 10px;
-    border: 2px double black;
-    border-radius: 10px;
-    background-color: antiquewhite;
-    text-align: center;
-}
-
-/* adjusting size of the divs  */
-#r1, #r2, #r3{
-    height: 400px;
-}
-#r4, #r5, #r6{
-    height: 200px;
-}
-#r1, #r3{
-    width: 250px;
-}
-#r4, #r6{
-    width: 350px;
-}
-#r5{
-    width: 500px;
-    text-align: center;
-    align-content: center;
-}
-#r2{
-    width: 700px;
-}
-
-/* styling and alignment of central div in row 1  */
-.p-3{
-    border: 2px dotted black;
-    margin-top: 20px;
-    width: 250px;
-    justify-self: center;
-}
-.p-2{
-    border-radius: 100%;
-    border: 2px dotted black;
-    height: 150px;
-    width: 150px;
-    justify-self: center;
-    margin-top: 10px
-}
-.p-4{
-    margin-top: 35px;
-    border: 2px double black;
-}
-
-/* styling cards inside the right sidebar in row 1  */
-.card{
-    width: 230px;
-    height: 150px;
-    margin-bottom: 5px;
-    justify-self: center;
-    text-align: justify;
-    background-color: aliceblue;
-}
-
-/* styling the circle inside the left sidebar in row 1  */
-.circ{
+/* designing profile */
+.circ {
     height: 100px;
     width: 100px;
     border: 2px dotted black;
-    border-radius: 100%;
-    justify-self: center;
-    margin-top: 50px;
+    border-radius: 50%;
+    margin: 20px auto;
     background-color: aliceblue;
 }
 
-/* styling the icons in the right sidebar in row 2  */
-#icon1, #icon2, #icon3{
+/* adding color to bootstrap card */
+.card {
+    background-color: aliceblue;
+    height: 150px;
+}
+
+.material-symbols-outlined {
     cursor: pointer;
+}
+
+.content-section {
+    flex-grow: 1;
+}
+
+nav{
+    margin-top: 15px;
+}
+
+/* aligning components in the central div */
+#r2 .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+#r2 .row .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#r2 .row .col div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+}
+.col{
+    margin-top: 20px;
+}
+
+/* creating border around picture */
+img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px dotted black;
 }
