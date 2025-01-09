@@ -10,76 +10,103 @@
 </head>
 
 <body>
+
     <div class="container">
 
         <!-- Navbar -->
-
-        <nav class="navbar navbar-expand-md bg-light navbar-light">
-            <!-- Brand -->
-            <a class="navbar-brand" href="#">PERSONAL PORTFOLIO</a>
-          
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <ul class="nav justify-content-center" id="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><h3>PERSONAL PORTFOLIO</h3></a>
+            </li>
+        </ul>
 
         <!-- Main Content -->
+
         <div class="content-section">
+
+            <!-- row 1 -->
             <div class="row g-4">
+
                 <!-- Left Sidebar -->
                 <div class="col-md-4 col-lg-3" id="r1">
                     <div class="bg-light p-3 rounded text-center">
                         <h4>Personal Portfolio</h4>
                         <hr>
                         <div class="circ"></div>
+                        <hr>
                         <h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, praesentium reprehenderit vel qui dolor maiores nesciunt sint distinctio necessitatibus inventore doloribus totam ipsa fugiat eveniet laborum impedit itaque fugit ullam?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, praesentium reprehenderit vel qui dolor maiores nesciunt sint distinctio necessitatibus inventore doloribus totam ipsa fugiat eveniet laborum impedit itaque fugit ullam?
                         </h6>
                     </div>
                 </div>
 
                 <!-- Center Content -->
-                <div class="col-md-8 col-lg-6" id="r2">
+                <div class="col-md-6 col-lg-4" id="r2">
+
+                    <!-- contains the profile picture and the title divs -->
                     <div class="row">
-                        <div class="col"><div class="p-3 border rounded">1</div></div>
-                        <div class="col"><img src="assets/images/person-icon.png" alt="Icon"></div>
-                        <div class="col"><div class="p-3 border rounded">2</div></div>
+                        <div class="col"><div class="p-3 border rounded"><h4>TITLE 1</h4></div></div>
+                        <div class="col"><img src="person-icon.png" alt="Icon"></div>
+                        <div class="col"><div class="p-3 border rounded"><h4>TITLE 2</h4></div></div>
                     </div>
+
                     <hr>
+
+                    <!-- contains divs of lists -->
                     <div class="row">
-                        <div class="col"><div class="p-4 border rounded">4</div></div>
-                        <div class="col"><div class="p-4 border rounded">5</div></div>
-                        <div class="col"><div class="p-4 border rounded">6</div></div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="p-4">
+                                    <ul>
+                                        <h6>About</h6>
+                                        <li>___________</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-4">
+                                    <ul>
+                                        <h6>Projects</h6>
+                                        <li>___________</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="p-4">
+                                    <ul>
+                                        <h6>Achievements</h6>
+                                        <li>___________</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-4">
+                                    <ul>
+                                        <h6>Experience</h6>
+                                        <li>___________</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Right Sidebar -->
                 <div class="col-md-4 col-lg-3" id="r3">
                     <div class="bg-light p-3 rounded">
-                        <h5>Personal Content</h5>
-                        <div class="card mb-3">
+                        <h4>Personal Content</h4>
+
+                        <hr>
+
+                        <div class="card mb-3" id="card">
                             <div class="card-body">
                                 <h6 class="card-title">Card title</h6>
                                 <p class="card-text">Example text to build on the card title.</p>
                             </div>
                         </div>
-                        <div class="card mb-3">
+                        <div class="card mb-3" id="card">
                             <div class="card-body">
                                 <h6 class="card-title">Card title</h6>
                                 <p class="card-text">Example text to build on the card title.</p>
@@ -89,7 +116,9 @@
                 </div>
             </div>
 
-            <div class="row g-4 mt-4">
+            <!-- row 2 -->
+            <div class="row g-4">
+
                 <!-- Left Sidebar -->
                 <div class="col-md-4 col-lg-3" id="r4">
                     <div class="bg-light p-3 rounded text-center">
@@ -100,7 +129,7 @@
                 </div>
 
                 <!-- Center Content -->
-                <div class="col-md-8 col-lg-6" id="r5">
+                <div class="col-md-6 col-lg-4" id="r5">
                     <div class="bg-light p-3 rounded">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nulla consectetur molestias nam accusantium repellat.
                     </div>
@@ -123,4 +152,9 @@
 
 </body>
 </html>
+
+
+
+
+    
 
