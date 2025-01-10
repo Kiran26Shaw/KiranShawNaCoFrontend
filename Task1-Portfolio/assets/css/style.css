@@ -1,23 +1,29 @@
-/* designing main 6 divs of the rows */
-#r1, #r2, #r3, #r4, #r5, #r6{
-    border: 2px dotted black;
-    border-radius: 20px;
-    padding: 15px;
-    margin: 15px;
-    margin-top: 25px;
-    background-color:cornsilk;
-}
-#r5, #r2{
-    width: 570px;
+body{
+    background-color: aliceblue;
 }
 
 /* styling navbar */
 #nav{
-    margin-top: 25px;
-    margin-bottom: 20px;
+    background-color:cornsilk;
     border: 2px solid black;
     border-radius: 10px;
+    margin: 10px;
+}
+
+/* styling and aligning divs of the rows */
+#two, #five{
     background-color:cornsilk;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+#one, #three, #four, #six{
+    background-color:cornsilk;
+    width: 362px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 /* styling headings */
@@ -49,27 +55,6 @@ h4{
 /* styling icons */
 .material-symbols-outlined {
     cursor: pointer;
-}
-
-/* aligning components in the central div */
-#r2 .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-#r2 .row .col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#r2 .row .col div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.col{
-    margin-top: 20px;
 }
 
 /* creating border around picture space */
