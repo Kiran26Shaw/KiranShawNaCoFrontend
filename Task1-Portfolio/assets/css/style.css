@@ -7,7 +7,7 @@ body{
     border: solid 2px black;
     border-radius: 10px;
     padding: 20px;
-    background: #fff8dc;
+    background-color:cornsilk;
     margin-bottom: 10px;
 }
 .row{
@@ -19,7 +19,7 @@ body{
     background-color:cornsilk;
     border: 2px solid black;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
     width: 100%;
 }
 
@@ -74,4 +74,3 @@ h4{
         height: 100%;
     }
 }
-
