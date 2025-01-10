@@ -19,7 +19,8 @@ body{
     background-color:cornsilk;
     border: 2px solid black;
     border-radius: 10px;
-    margin: 10px;
+    margin-top: 10px;
+    width: 100%;
 }
 
 /* designing profile picture space */
