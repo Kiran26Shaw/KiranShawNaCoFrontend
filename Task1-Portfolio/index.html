@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
 
         <!-- Navbar -->
         <ul class="nav justify-content-center" id="nav">
@@ -19,133 +19,127 @@
             </li>
         </ul>
 
-        <!-- Main Content -->
-        <div class="container text-center" id="container">
 
-            <!-- row 1 -->
-            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <!-- top section -->
+        <div class="row">
 
-                <!-- Left Sidebar -->
-                <div class="col" id="one">
-                    <div class="p-3">
-                        <h4>Personal Portfolio</h4>
-                        <hr>
-                        <div class="circ"></div>
-                        <hr>
-                        <h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, praesentium reprehenderit vel qui dolor maiores nesciunt sint distinctio necessitatibus inventore doloribus totam ipsa fugiat eveniet laborum impedit itaque fugit ullam?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, praesentium reprehenderit vel qui dolor maiores nesciunt sint distinctio necessitatibus inventore doloribus totam ipsa fugiat eveniet laborum impedit itaque fugit ullam?
-                        </h6>
-                    </div>
+            <!-- personal portfolio div -->
+            <div class="col-md-3 col-xs-12">
+
+                <div class="single-main-container">
+                    <h4>
+                        Personal Portfolio
+                    </h4>
+                    <div class="circ"></div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, praesentium reprehenderit vel qui dolor maiores nesciunt sint distinctio necessitatibus inventore doloribus totam ipsa fugiat eveniet laborum impedit itaque fugit ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, praesentium reprehenderit vel qui dolor maiores nesciunt sint distinctio necessitatibus inventore doloribus totam ipsa fugiat eveniet laborum impedit itaque fugit ullam?
+                    </p>
                 </div>
 
-                <!-- Center Content -->
-                <div class="col" id="two">
+            </div>
 
-                    <!-- contains the profile picture and the title divs -->
+            <!-- personal info div -->
+            <div class="col-md-6 col-xs-12">
+
+                <div class="single-main-container">
                     <div class="row">
-                        <div class="col"><div class="p-3 border rounded"><h4>TITLE 1</h4></div></div>
-                        <div class="col"><img src="assets/images/person-icon.png" alt="Icon"></div>
-                        <div class="col"><div class="p-3 border rounded"><h4>TITLE 2</h4></div></div>
+                        <div class="col-md-4 col-xs-12" id="TitleBox">TITLE 1</div>
+                        <div class="col-md-4 col-xs-12"><img src="assets/images/person-icon.png" alt="Icon"></div>
+                        <div class="col-md-4 col-xs-12" id="TitleBox">TITLE 2</div>
                     </div>
 
                     <hr>
 
-                    <!-- contains divs of lists -->
                     <div class="row">
-                        <div class="row">
-                            <div class="col">
-                                <div class="p-4">
-                                    <ul>
-                                        <h6>About</h6>
-                                        <li>___________</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="p-4">
-                                    <ul>
-                                        <h6>Projects</h6>
-                                        <li>___________</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-md-6 col-xs-12">
+                            <ul>
+                                <h6>About</h6>
+                                <li>___________</li>
+                            </ul>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="p-4">
-                                    <ul>
-                                        <h6>Achievements</h6>
-                                        <li>___________</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="p-4">
-                                    <ul>
-                                        <h6>Experience</h6>
-                                        <li>___________</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-md-6 col-xs-12">
+                            <ul>
+                                <h6>Projects</h6>
+                                <li>___________</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <ul>
+                                <h6>Achievements</h6>
+                                <li>___________</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <ul>
+                                <h6>Experience</h6>
+                                <li>___________</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Sidebar -->
-                <div class="col" id="three">
-                    <div class="p-3">
-                        <h4>Personal Content</h4>
+            </div>
 
-                        <hr>
 
-                        <div class="card mb-3" id="card">
-                            <div class="card-body">
-                                <h6 class="card-title">Card title</h6>
-                                <p class="card-text">Example text to build on the card title.</p>
-                            </div>
-                        </div>
-                        <div class="card mb-3" id="card">
-                            <div class="card-body">
-                                <h6 class="card-title">Card title</h6>
-                                <p class="card-text">Example text to build on the card title.</p>
-                            </div>
+            <!-- perosnal content -->
+            <div class="col-md-3 col-xs-12">
+                <div class="single-main-container">
+                    <h4>Personal Content</h4>
+
+                    <hr>
+
+                    <div class="card mb-3" id="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Card title</h6>
+                            <p class="card-text">Example text to build on the card title.</p>
                         </div>
                     </div>
+                    <div class="card mb-3" id="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Card title</h6>
+                            <p class="card-text">Example text to build on the card title.</p>
+                        </div>
+                    </div>
+                
                 </div>
             </div>
 
-            <!-- row 2 -->
-            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        </div>
+        <!-- ends here ~ top section -->
 
-                <!-- Left Sidebar -->
-                <div class="col" id="four">
-                    <div class="p-3">
-                        <h4>Lorem</h4>
-                        <h4>Ipsum</h4>
-                        <hr>
-                    </div>
+        <!-- bottom section -->
+        <div class="row">
+
+            <!-- Extra-Curricular Activities -->
+            <div class="col-md-3 col-xs-12">
+                <div class="single-main-container">
+                    <h4>Extra-Curricular Activities</h4>
+                    <hr>
                 </div>
+            </div>
 
-                <!-- Center Content -->
-                <div class="col" id="five">
-                    <div class="p-3">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nulla consectetur molestias nam accusantium repellat.
-                    </div>
+            <!-- Extra info div-->
+            <div class="col-md-6 col-xs-12">
+                <div class="single-main-container">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nulla consectetur molestias nam accusantium repellat.
                 </div>
+            </div>
 
-                <!-- Right Sidebar -->
-                <div class="col" id="six">
-                    <div class="p-3">
-                        <h4>Projects</h4>
-                        <span class="material-symbols-outlined">date_range</span>
-                        <span class="material-symbols-outlined">web</span>
-                        <span class="material-symbols-outlined">collections_bookmark</span>
-                        <hr>
-                    </div>
+            <!-- Projects -->
+            <div class="col-md-3 col-xs-12">
+                <div class="single-main-container">
+                    <h4>Projects</h4>
+                    <span class="material-symbols-outlined">date_range</span>
+                    <span class="material-symbols-outlined">web</span>
+                    <span class="material-symbols-outlined">collections_bookmark</span>
+                    <hr>
                 </div>
             </div>
         </div>
-
+        <!-- ends here ~ bottom section -->
+        
     </div>
 
 </body>
