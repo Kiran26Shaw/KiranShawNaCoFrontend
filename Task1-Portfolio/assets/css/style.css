@@ -2,34 +2,24 @@ body{
     background-color: aliceblue;
 }
 
+/* styling of overall page */
+.single-main-container {
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff8dc;
+    margin-bottom: 10px;
+}
+.row{
+    margin-top: 10px;
+}
+
 /* styling navbar */
 #nav{
     background-color:cornsilk;
     border: 2px solid black;
     border-radius: 10px;
     margin: 10px;
-}
-
-/* styling and aligning divs of the rows */
-#two, #five{
-    background-color:cornsilk;
-    width: 500px;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin: 10px;
-}
-#one, #three, #four, #six{
-    background-color:cornsilk;
-    width: 362px;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-/* styling headings */
-h4{
-    color:rgb(67, 67, 253);
-    background-color: aliceblue;
 }
 
 /* designing profile picture space */
@@ -42,12 +32,28 @@ h4{
     background-color: aliceblue;
 }
 
-/* styling bootstrap card */
-.card-body {
+/* styling the image picture */
+img{
     height: 150px;
-    margin-top: 50px;
-    background-color: aliceblue;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px dotted black;
+    align-self: center;
 }
+
+/* styling the personal info div */
+#TitleBox{
+    border: dashed 3px black;
+    border-radius: 5px;
+    height: fit-content;
+    text-align: center;
+}
+ul{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+/* styling bootstrap card */
 #card{
     background-color: aliceblue;
 }
@@ -57,12 +63,14 @@ h4{
     cursor: pointer;
 }
 
-/* creating border around picture space */
-img{
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    border: 2px dotted black;
-    text-align: center;
+/* styling headings */
+h4{
+    color:rgb(67, 67, 253);
+}
+
+@media (min-width:720px) {
+    .single-main-container {
+        height: 100%;
+    }
 }
 
