@@ -1,0 +1,157 @@
+body {
+    background-color: aliceblue;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* styling of the page */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cornsilk;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+.navbar h4 {
+    margin: 0;
+    color: rgb(67, 67, 253);
+}
+/* navbar items positioning  */
+.navbar ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar li {
+    cursor: pointer;
+}
+
+/* styling rows */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* styling all the divs' column */
+.column{
+  height: 400px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: cornsilk;
+    padding: 15px;
+}
+/* differentiating central div's height and width */
+.column-center{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 630px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: cornsilk;
+    gap: 15px;
+    padding: 15px;
+}
+
+/* styling of items inside general info div */
+.TitleBox{
+    display: flex;
+    justify-content: space-between;
+}
+.Title{
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+.circ {
+    height: 100px;
+    width: 100px;
+    border: 2px dotted black;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: aliceblue;
+}
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px dotted black;
+    display: block;
+    margin: 0 auto;
+}
+
+/* styling the items of personal content div */
+.card {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* styling icons */
+.material-symbols-outlined {
+    cursor: pointer;
+    text-align: center;
+}
+
+/* styling headings */
+h4 {
+    color: rgb(67, 67, 253);
+    margin: 0 0 10px 0;
+}
+
+/* styling lists of info in general info div */
+.list1, .list2{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* responsiveness of the page */
+@media (max-width: 768px) {
+  .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+}
+@media (max-width: 480px) {
+    /* .column {
+        flex: 1 1 100%;
+    } */
+
+    .circ {
+        height: 80px;
+        width: 80px;
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+    }
+}
