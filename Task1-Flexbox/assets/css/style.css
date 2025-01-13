@@ -108,7 +108,7 @@ h4 {
 /* styling lists of info in general info div */
 .list1, .list2{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 /* responsiveness of the page */
@@ -145,5 +145,9 @@ h4 {
     img {
         height: 80px;
         width: 80px;
+    }
+    .list1, .list2{
+        display: block;
+        align-items: center;
     }
 }
