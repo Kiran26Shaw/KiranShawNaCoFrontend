@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- To-Do List container -->
+    <div class="container">
+
+        <h1>TO-DO LIST</h1>
+
+        <!-- header starts here -->
+        <div class="header">
+            <!-- div to add items on the list -->
+            <input type="text" id="item" placeholder="Name of the Item">
+            <button id="add">ADD ITEM</button>
+        </div>
+        <!-- header ends here -->
+
+        <hr>
+
+        <!-- lists div start here -->
+        <div class="list">
+
+            <!-- To-Do list div -->
+            <div class="list1">
+                <h2>To-Do List</h2>
+                <ul id="toDoList"></ul>
+            </div>
+
+            <!-- div for the buttons to move the list items -->
+            <div class="buttons">
+                <button id="moveToRight">MOVE TO RIGHT ></button> <!--button to move items to the completed list-->
+                <button id="moveToLeft">< MOVE TO LEFT</button> <!--button to move items to the to-do list-->
+            </div>
+
+            <!-- Completed list div -->
+            <div class="list2">
+                <h2>Complete List</h2>
+                <ul id="completeList"></ul>
+            </div>
+
+        </div>
+        <!-- lists div ends here -->
+
+    </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
