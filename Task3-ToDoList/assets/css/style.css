@@ -1,0 +1,117 @@
+/* styling the basic layout of the page */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  background-color: whitesmoke;
+}
+
+/* styling and adjusting the list-container */
+.container {
+  width: 90%;
+  background-color: white;
+  border: 2px solid grey;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* adjusting header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+/* styling the div where items are to be added */
+#item {
+  margin-right: 5px;
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid grey;
+  border-radius: 4px;
+}
+
+/* styling the add item button */
+#add {
+  margin-left: 5px;
+  padding: 10px 15px;
+  font-weight: bolder;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#add:hover {
+  background-color: green;
+}
+
+/* styling the to-do and complete lists div */
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list1, .list2 {
+  flex: 1;
+  margin: 0 10px;
+}
+/* headings of the 2 lists */
+h2 {
+  text-align: center;
+  font-weight: bolder;
+  color: mediumslateblue;
+}
+
+/* styling the content that is to be added to the list */
+ul {
+  list-style: none;
+  padding: 0;
+  border: 2px solid grey;
+  border-radius: 4px;
+  min-height: 200px;
+}
+
+/* styling items of the list */
+ul li {
+  padding: 10px;
+  border-bottom: 1px solid grey;
+  cursor: pointer;
+  text-align: center;
+}
+
+ul li.selected {
+  background-color: rgb(182, 182, 235);
+}
+
+/* styling the left and right buttons */
+.buttons {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background: blueviolet;
+  font-weight: bolder;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background: darkblue;
+}
+
+h1{
+    color: blueviolet;
+    text-align: center;
+}
