@@ -17,7 +17,8 @@
         <div class="header">
             <!-- div to add items on the list -->
             <input type="text" id="item" placeholder="Name of the Item">
-            <button id="add">ADD ITEM</button>
+            <button id="add">ADD ITEM</button>   <!--button to add items-->
+            <button id="remove">REMOVE ITEM</button>   <!--button to remove items-->
         </div>
         <!-- header ends here -->
 
@@ -34,8 +35,8 @@
 
             <!-- div for the buttons to move the list items -->
             <div class="buttons">
-                <button id="moveToRight">MOVE TO RIGHT ></button> <!--button to move items to the completed list-->
-                <button id="moveToLeft">< MOVE TO LEFT</button> <!--button to move items to the to-do list-->
+                <button id="moveToRight"><p>MOVE TO RIGHT ></p></button> <!--button to move items to the completed list-->
+                <button id="moveToLeft"><p>< MOVE TO LEFT</p></button> <!--button to move items to the to-do list-->
             </div>
 
             <!-- Completed list div -->
@@ -49,7 +50,9 @@
 
     </div>
 
-  <script src="assets/js/script.js"></script>
+    <div id="toaster"></div> <!--toaster-->
+
+    <script src="assets/js/script.js"></script>
 
 </body>
 </html>
