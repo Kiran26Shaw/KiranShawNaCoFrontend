@@ -1,0 +1,42 @@
+/* navbar styling */
+.navbar {
+    background-color:rgb(115, 2, 70);
+}
+.navbar-brand, .nav-link {
+    color: #fff;
+}
+
+/* main content section styling */
+#ContentSection{
+    padding: 0;
+    border: 2px solid rgb(146, 146, 233);
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+/* styling header */
+.header {
+    background-color: rgb(178, 178, 226);
+    color: rgb(34, 34, 113);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* styling the texts of the main content */
+.text{
+    font-weight: bolder;
+    text-decoration: 2px dotted underline;
+    font-size: xx-large;
+}
+.text1{
+    font-weight: bold;
+    font-size:larger;
+}
+
+/* styling footer */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: gray;
+}
