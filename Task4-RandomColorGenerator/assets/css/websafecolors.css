@@ -73,15 +73,7 @@ body {
     #color-grid {
         grid-template-columns: repeat(4, 1fr); /* 4 columns for small screens */
     }
-
-    .navbar-nav {
-        text-align: center;
-    }
-
-    .navbar-toggler {
-        margin-left: auto;
-    }
-
+    
     #color-btn {
         padding: 8px 15px; /* Adjust button padding */
     }
