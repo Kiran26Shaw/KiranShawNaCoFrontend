@@ -1,0 +1,54 @@
+/* navbar styling */
+.navbar {
+    background-color:rgb(115, 2, 70);
+}
+.navbar-brand, .nav-link {
+    color: #fff;
+}
+
+body {
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+/* styling display box */
+.info-box {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif;
+}
+
+/* styling the buttons */
+.btn-group .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+.btn-group .btn .material-icons {
+    margin-right: 5px;
+}
+
+/* responsiveness */
+@media (max-width: 576px) {
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-group .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+/* styling footer */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: gray;
+}
