@@ -183,3 +183,9 @@ function generateRandomColors() {
 
 // Attach event listener to the button
 document.getElementById("generate-btn").addEventListener("click", generateRandomColors);
+
+// function to display info on contact page
+function showInfo(id) {
+  document.querySelectorAll('.info-box').forEach(div => div.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+}
