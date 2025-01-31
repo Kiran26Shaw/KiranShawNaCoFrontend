@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RandomColorGenerator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="rgb.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Color Models</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>   <!--home page link-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rgb.html">RGB</a>   <!--rgb page link-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cmy.html">CMY</a>   <!--cmy page link-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="websafecolors.html">Web safe Colors</a>   <!--safe colors page link-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>   <!--contact page link-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>   <!--about page link-->
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row g-4">
+
+      <!-- Left Card -->
+      <div class="col-md-6">
+        <div class="card text-bg-light">
+          <div class="card-header0">
+            <h3 class="mb-0">
+              <span class="red">Red</span>
+              <span class="green">Green</span>
+              <span class="blue">Blue</span> 
+              (<span class="red">R</span><span class="green">G</span><span class="blue">B</span>)
+            </h3>
+          </div>
+          <!-- left card content -->
+          <div class="card-body">
+            <p>
+              <span class="red">R</span><span class="green">G</span><span class="blue">B</span> is an <em>additive color projected light color model</em> where each color is stored in 
+              one byte.
+            </p>
+            <p>All possible combinations of <strong class="red">red</strong>, <strong class="green">green</strong>, and <strong class="blue">blue</strong> give 
+              2<sup>24</sup> = 16,777,216 different colors.
+            </p>
+            <p>
+              Starting with (<span class="red">Red</span>,<span class="green">Green</span>,<span class="blue">Blue</span>) = (<span class="red">0</span>,<span class="green">0</span>,<span class="blue">0</span>) (black), to which different color 
+              "lights" are added to produce visible colors.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card -->
+      <div class="col-md-6">
+        <div class="card text-bg-light">
+          <div class="card-header1">
+            <h3 class="mb-0">
+              <span class="red">Red</span>
+              <span class="green">Green</span>
+              <span class="blue">Blue</span> 
+              (<span class="red">R</span><span class="green">G</span><span class="blue">B</span>)
+            </h3>
+          </div>
+          <!-- right card content -->
+          <div class="card-body">
+            <h6 class="mb-3">Select <span class="red">R</span><span class="green">G</span><span class="blue">B</span> values:</h6>
+            <form>
+              <div class="row g-2 align-items-center">
+                <div class="col">
+                  <label for="red" class="red">Red:</label> <!--select red tone from 0-255-->
+                  <select id="red" class="form-select">
+                    <option value="">--</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="green" class="green">Green:</label> <!--select green tone from 0-255-->
+                  <select id="green" class="form-select">
+                    <option value="">-</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="blue" class="blue">Blue:</label> <!--select blue tone from 0-255-->
+                  <select id="blue" class="form-select">
+                    <option value="">-</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+
+            <!-- table where rgb color will be shown -->
+            <table class="table table-bordered mt-4">
+              <thead>
+                <tr>
+                  <th><span class="red">R</span><span class="green">G</span><span class="blue">B</span> Float Values</th>
+                  <th><span class="red">R</span><span class="green">G</span><span class="blue">B</span> Hexadecimal Values</th>
+                  <th>Display</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Dynamic data to be inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Generate Random Colors Button -->
+    <div class="text-center mt-4">
+      <button id="generate-btn" class="btn btn-primary px-4 py-2">Generate Random Colors</button>
+    </div>
+
+    <!-- Hidden Table Section -->
+    <div id="color-table-container" class="mt-4" style="display: none;">
+      <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th>Float Values</th>
+            <th>Hexadecimal Values</th>
+            <th>Display</th>
+          </tr>
+        </thead>
+        <tbody id="color-table-body">
+          <!-- Rows will be added dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025. Kiran Shaw. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
