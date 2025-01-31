@@ -1,0 +1,60 @@
+/* navbar styling */
+.navbar {
+    background-color:rgb(115, 2, 70);
+}
+.navbar-brand, .nav-link {
+    color: #fff;
+}
+
+body {
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+/* alignment of table */
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* styling cards */
+.card-body {
+    border-radius: 8px;
+}
+.card-header0{
+    background-color: rgba(240, 109, 109, 0.475);
+    font-weight: bold;
+    padding: 10px;
+}
+.card-header1{
+    background-color: rgba(109, 240, 122, 0.475);
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* styling rgb texts */
+.red, .green, .blue{
+    font-weight: bold;
+}
+
+/* styling generate random colors button */
+#generate-btn{
+    background-color:rgb(115, 2, 70);
+}
+
+/* aligning the table of random colors */
+#color-table-container {
+    text-align: center;
+}
+.color-box {
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+/* styling footer */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: gray;
+}
