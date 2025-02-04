@@ -50,7 +50,7 @@ body {
 }
 
 /* responsiveness */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     #color-grid {
         grid-template-columns: repeat(8, 1fr); /* 8 columns for medium screens */
     }
