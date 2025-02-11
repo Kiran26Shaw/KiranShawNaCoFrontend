@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Spree</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">TrendSpree</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item category-btn" data-category="men's clothing">Men's Clothing</button></li>
+                            <li><button class="dropdown-item category-btn" data-category="women's clothing">Women's Clothing</button></li>
+                            <li><button class="dropdown-item category-btn" data-category="jewelery">Jewelry</button></li>
+                            <li><button class="dropdown-item category-btn" data-category="accessories">Accessories</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="cart.html" class="nav-link">🛒 View Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div>
+            <h1>Welcome to Our Clothing Store</h1>
+            <p>Discover the best clothing, jewelry, and accessories.</p>
+        </div>
+    </section>
+
+    <section id="products" class="container mt-5">
+        <h2 class="text-center text-danger">Products</h2>
+        <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4"></div>
+    </section>
+
+    <!-- Toggler Notification -->
+    <div id="cart-toggler" class="cart-toggler">Item added to cart!</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
