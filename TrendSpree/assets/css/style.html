@@ -1,0 +1,82 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf6f0;
+}
+.navbar {
+    background-color: rgb(209, 113, 132);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand, .nav-link {
+    color: #ffffff;
+    font-weight: bold;
+}
+.hero-section {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgb(209, 113, 132);
+}
+.card img {
+    height: 300px;
+    border-radius: 15px 15px 0 0;
+}
+
+#products h2{
+    font-weight: bolder;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.btn-success {
+    background-color: crimson;
+    border: none;
+    font-weight: bold;
+}
+.btn-success:hover {
+    background-color: green;
+}
+@media (max-width: 575px) {
+    .card{
+        height: 300px;
+        width: 250px;
+        border-radius: 15px 15px 0 0;
+        justify-self: center;
+    }
+}
+
+/* Toggler Notification */
+.cart-toggler {
+    position: fixed;
+    bottom: -50px; /* Initially hidden */
+    right: 20px;
+    background-color: rgba(0, 128, 0, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.cart-toggler.show {
+    bottom: 20px; /* Slide up */
+}
