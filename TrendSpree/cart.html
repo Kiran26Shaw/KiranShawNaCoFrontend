@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trend Spree</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/cart.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">TrendSpree</a>
+            <a class="navbar-brand" href="index.html"><h2>TrendSpree</h2></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,37 +28,54 @@
                             <li><button class="dropdown-item category-btn" data-category="accessories">Accessories</button></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a href="cart.html" class="nav-link">🛒 View Cart (<span id="cart-count">0</span>)</a></li>
+                    <li class="nav-item"><a href="cart.html" class="nav-link"><i class="bi bi-cart"></i> View Cart (<span id="cart-count">0</span>)</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <h2 class="text-center">Shopping Cart</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items"></tbody>
-        </table>
-
-        <div class="cart-summary">
-            <p>Subtotal: <span id="subtotal">$0.00</span></p>
-            <p>Tax: <span id="tax">$0.00</span></p>
-            <p>Total: <span id="total">$0.00</span></p>
-            <button class="checkout-btn">Proceed to checkout →</button>
+    <section id="home" class="hero-section">
+        <div>
+            <h1>Welcome to Our Clothing Store</h1>
+            <p>Discover the best clothing, jewelry, and accessories.</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Toggler Notification -->
-    <div id="cart-toggler" class="cart-toggler">Item updated!</div>
+    <!-- Product List Section -->
+    <section id="products" class="container mt-5">
+        <h2 class="text-center text-danger">ALL PRODUCTS</h2>
+        <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4"></div>
+    </section>
+
+    <!-- Product Details Section (Hidden Initially) -->
+    <section id="product-detail" class="container mt-5" style="display: none;">
+        <button id="back-to-products" class="btn btn-outline-danger mb-3">← Back to Products</button>
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img id="detail-image" class="img-fluid rounded" alt="Product Image">
+            </div>
+            <div class="col-md-6">
+                <h2 id="detail-title"></h2>
+                <p id="detail-price" class="text-danger fs-4 fw-bold"></p>
+                <p id="detail-description"></p>
+                <button class="btn btn-success" id="add-to-cart-detail">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-toggler" class="cart-toggler">Item added to cart!</div>
+
+    <footer class="footer">
+        <div class="container text-center py-4">
+            <p class="footer-title">TrendSpree</p>
+            <p>123 Fashion Street, New York, NY 10001</p>
+            <p class="icons"><i class="bi bi-telephone-fill"></i> +1 234 567 890 | <i class="bi bi-envelope-at-fill"></i> support@trendspree.com</p>
+            <p class="rights">© 2025 TrendSpree. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
+
 </body>
 </html>
