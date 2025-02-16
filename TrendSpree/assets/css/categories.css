@@ -3,7 +3,7 @@ body {
     background-color: #fdf6f0;
 }
 
-/* Logo styling*/
+/* logo styling */
 .logo {
     height: 50px;
     width: auto;
@@ -11,7 +11,7 @@ body {
     border: 2px solid white;
 }
 
-/* Navbar styling */
+/* navbar styling */
 .navbar {
     background-color: rgb(209, 113, 132);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@ body {
     font-weight: bold;
 }
 
-/* Styling for filter buttons */
+/* categories button styling */
 .filter-btn {
     background-color: rgb(209, 113, 132);
     color: white;
@@ -35,11 +35,11 @@ body {
 .filter-btn:hover {
     background-color: crimson;
 }
-.filter-btn.selected {
+.filter-btn.selected{
     background-color: crimson;
 }
 
-/* Product card styling */
+/* products cart styling */
 .card {
     border: none;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -51,16 +51,13 @@ body {
     transform: scale(1.05);
     box-shadow: 0px 4px 15px rgb(209, 113, 132);
 }
-
-/* Product card image styling */
 .card img {
     height: 300px;
     width: 250px;
     align-self: center;
+    /* object-fit: cover; */
     border-radius: 15px 15px 0 0;
 }
-
-/* card styling*/
 .card-body {
     display: flex;
     flex-direction: column;
@@ -68,7 +65,7 @@ body {
     height: 100%;
 }
 
-/* Add-to-cart button styling */
+/* add to cart button styling */
 .add-to-cart {
     background-color: crimson;
     color: white;
@@ -82,7 +79,7 @@ body {
     background-color: green;
 }
 
-/* Footer styling */
+/* footer styling */
 .footer {
     background-color: rgb(209, 113, 132);
     color: white;
@@ -94,7 +91,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
 }
-.footer .icons {
+.footer .icons{
     cursor: pointer;
 }
 .rights {
@@ -102,14 +99,14 @@ body {
     opacity: 0.8;
 }
 
-/* Mobile Optimization */
+/* responsiveness */
 @media (max-width: 575px) {
     .footer-title {
         font-size: 1.3rem;
     }
 }
 
-/* Styling for the floating cart notification (toaster) */
+/* Toggler Styling */
 #card-toggler {
     position: fixed;
     bottom: -50px; /* Initially hidden */
@@ -121,19 +118,16 @@ body {
     font-weight: bold;
     transition: bottom 0.5s ease-in-out;
 }
-
-/* Show toaster when an item is added to the cart */
+/* Show toaster */
 #card-toggler.show {
-    bottom: 20px; 
+    bottom: 50px; 
 }
 
-/* Product detail container styling */
+/* product details styling */
 .product-detail-container {
     text-align: center;
     margin-top: 20px;
 }
-
-/* Product detail card styling */
 .product-detail-card {
     max-width: 600px;
     margin: 0 auto;
@@ -141,28 +135,22 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(209, 113, 132, 0.5);
 }
-
-/* Styling for product detail image */
 .detail-img {
     width: 100%;
     max-height: 300px;
     object-fit: contain;
     border-radius: 10px;
 }
-
-/* Price styling in product details */
 .price {
     font-size: 1.5rem;
     font-weight: bold;
     color: crimson;
 }
-
-/* hide elements */
 .d-none {
     display: none !important;
 }
 
-/* Add-to-cart button in product details */
+/* add to cart styling */
 #add-to-cart-detail {
     background-color: crimson;
     border: none;
@@ -173,8 +161,6 @@ body {
 #add-to-cart-detail:hover {
     background-color: green;
 }
-
-/* Back to products button */
 #back-to-products {
     display: block;
     margin-bottom: 30px;
