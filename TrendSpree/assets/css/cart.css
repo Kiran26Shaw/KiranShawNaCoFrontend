@@ -3,6 +3,15 @@ body {
     background-color: #fdf6f0;
 }
 
+/* Logo styling*/
+.logo {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Navbar styling*/
 .navbar {
     background-color: rgb(209, 113, 132);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -11,29 +20,28 @@ body {
     color: #ffffff;
     font-weight: bold;
 }
-
-.dropdown-menu button:hover{
+.dropdown-menu button:hover {
     background-color: crimson;
 }
 
+/* Table Styling */
 .table {
     width: 100%;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .table th {
     background-color: rgb(209, 113, 132);
     color: white;
     padding: 15px;
 }
-
 .table td {
     padding: 10px;
     vertical-align: middle;
 }
 
+/* Cart Image */
 .cart-img {
     width: 50px;
     height: 50px;
@@ -42,6 +50,7 @@ body {
     margin-right: 10px;
 }
 
+/* Cart Summary */
 .cart-summary {
     background: #fff;
     padding: 20px;
@@ -49,12 +58,12 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
-
 .cart-summary p {
     font-size: 1.1rem;
     font-weight: bold;
 }
 
+/* Checkout Button styling*/
 .checkout-btn {
     background-color: crimson;
     color: white;
@@ -63,13 +72,33 @@ body {
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
 .checkout-btn:hover {
     background-color: green;
 }
 
-/* Toggler Notification */
+/* Clear Cart Button styling*/
+.cart-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn-clear-cart {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-clear-cart:hover {
+    background-color: darkred;
+}
+
+/* Cart Notification Toggler */
 .cart-toggler {
     position: fixed;
     bottom: 20px;
@@ -80,9 +109,10 @@ body {
     border-radius: 5px;
     display: none;
     font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Footer styling*/
 .footer {
     background-color: rgb(209, 113, 132);
     color: white;
@@ -90,13 +120,11 @@ body {
     margin-top: 40px;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .footer-title {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
-.footer .icons{
+.footer .icons {
     cursor: pointer;
 }
 .rights {
@@ -109,50 +137,12 @@ body {
     .footer-title {
         font-size: 1.3rem;
     }
-}
 
-/* Clear Cart Button Styling */
-.cart-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
+    .cart-summary {
+        padding: 15px;
+    }
 
-.btn-clear-cart {
-    background-color: crimson;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-clear-cart:hover {
-    background-color: crimson;
-}
-
-/* Toggler Notifications */
-.cart-toggler {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: none; /* Initially hidden */
-    font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Individual Togglers */
-#cart-toggler {
-    background-color: crimson; 
-}
-#clear-cart-toggler {
-    background-color: crimson; 
-}
-#empty-cart-toggler {
-    background-color: crimson; 
+    .table {
+        font-size: 0.9rem;
+    }
 }
