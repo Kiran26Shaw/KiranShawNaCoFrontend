@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trend Spree</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/css/categories.css">
+    <link rel="stylesheet" href="categories.css">
 </head>
 <body>
-    <!-- Navbar -->
+
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <!-- Brand Logo and Name -->
+
+            <!-- brand name and logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/images/logo.png" alt="Trend Spree Logo" class="logo">
+                <img src="logo.png" alt="Trend Spree Logo" class="logo">
                 <h2 class="ms-2">TrendSpree</h2>
             </a>
-            <!-- Navbar Toggle Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Navbar Links -->
+
+            <!-- navbar link -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
-                    <li class="nav-item"><a href="cart.html" class="nav-link"><i class="bi bi-cart"></i> View Cart (<span id="cart-count">0</span>)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>  <!--home page-->
+                    <li class="nav-item"><a class="nav-link" href="index.html">Products</a></li>  <!--home page-->
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>  <!--categories page-->
+                    <li class="nav-item"><a href="cart.html" class="nav-link"><i class="bi bi-cart"></i> View Cart (<span id="cart-count">0</span>)</a></li>  <!--cart page-->
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Filter Buttons for Categories -->
+    <!-- categories buttons -->
     <div class="container mt-4 text-center">
         <button class="filter-btn" data-category="men's clothing">Men's Choice</button>
         <button class="filter-btn" data-category="women's clothing">Women's Choice</button>
@@ -42,7 +43,7 @@
         <button class="filter-btn" data-category="electronics">Electronics</button>
     </div>
 
-    <!-- Product List Section -->
+    <!-- displaying products initially -->
     <div class="container mt-4">
         <div id="product-list" class="row row-cols-1 row-cols-md-3 g-4"></div>
     </div>
@@ -60,11 +61,12 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Toggler Notification -->
     <div id="card-toggler">Item Added to Cart!</div>
 
-    <!-- Footer Section -->
+    <!-- footer section -->
     <footer class="footer">
         <div class="container text-center py-4">
             <p class="footer-title">TrendSpree</p>
@@ -74,8 +76,7 @@
         </div>
     </footer>
 
-
-    <!-- Javascript for categories page -->
+    <!-- javascript for categories page -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const productList = document.getElementById("product-list");
@@ -84,7 +85,7 @@
             const productDetail = document.getElementById("product-detail");
             const backToProducts = document.getElementById("back-to-products");
 
-            // Fetch and display products based on category
+            // Fetch product data from Fake Store API
             function fetchProducts(category = "") {
                 fetch("https://fakestoreapi.com/products")
                     .then(response => response.json())
@@ -97,7 +98,7 @@
                     .catch(error => console.error("Error fetching products:", error));
             }
 
-            // Display products in the product list section
+            // function to display products
             function displayProducts(products) {
                 productList.innerHTML = "";
                 products.forEach(product => {
@@ -134,9 +135,41 @@
                         addToCart(productId, productTitle, productPrice, productImage);
                     });
                 });
+
+                document.querySelectorAll(".product-card").forEach(card => {
+                    card.addEventListener("click", event => {
+                        const productId = event.currentTarget.getAttribute("data-id");
+                        showProductDetail(productId);
+                    });
+                });
             }
 
-            // Add product to cart and update local storage
+            // function to show product details
+            function showProductDetail(productId) {
+                fetch(`https://fakestoreapi.com/products/${productId}`)
+                    .then(response => response.json())
+                    .then(product => {
+                        document.getElementById("detail-image").src = product.image;
+                        document.getElementById("detail-title").textContent = product.title;
+                        document.getElementById("detail-description").textContent = product.description;
+                        document.getElementById("detail-price").textContent = `$${product.price.toFixed(2)}`;
+
+                        productList.classList.add("d-none");
+                        productDetail.classList.remove("d-none");
+
+                        document.getElementById("add-to-cart-detail").onclick = () => {
+                            addToCart(product.id, product.title, product.price, product.image);
+                        };
+                    })
+                    .catch(error => console.error("Error fetching product details:", error));
+            }
+
+            // back to products functionality
+            backToProducts.addEventListener("click", () => {
+                productList.classList.remove("d-none");
+                productDetail.classList.add("d-none");
+            });
+
             function addToCart(id, title, price, image) {
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -149,11 +182,43 @@
 
                 localStorage.setItem("cart", JSON.stringify(cart));
                 updateCartCount();
+
+                showToaster("Item Added to Cart!");
             }
+
+            function showToaster(message) {
+                const toaster = document.getElementById("card-toggler");
+                toaster.textContent = message;
+                toaster.classList.add("show");
+
+                setTimeout(() => {
+                    toaster.classList.add("hide");
+                    setTimeout(() => {
+                        toaster.classList.remove("show", "hide");
+                    }, 300);
+                }, 2000);
+            }
+
+            // function to update cart count
+            function updateCartCount() {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.textContent = totalItems;
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const category = button.getAttribute("data-category");
+                    fetchProducts(category);
+                });
+            });
 
             fetchProducts();
             updateCartCount();
         });
+
+
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
