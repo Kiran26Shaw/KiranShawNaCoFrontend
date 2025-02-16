@@ -2,6 +2,16 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #fdf6f0;
 }
+
+/* Logo Styling */
+.logo {
+    height: 50px; /* Adjust size as needed */
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Navbar Styling */
 .navbar {
     background-color: rgb(209, 113, 132);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -10,7 +20,10 @@ body {
     color: #ffffff;
     font-weight: bold;
 }
+
+/* Banner Section */
 .hero-section {
+    background: url('assets/images/bg.png') no-repeat center center/cover;
     height: 450px;
     display: flex;
     align-items: center;
@@ -21,6 +34,8 @@ body {
     font-size: 1.5rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
+
+/* Product Cards */
 .card {
     border: none;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -34,20 +49,23 @@ body {
 }
 .card img {
     height: 300px;
-    /* object-fit: cover; */
     border-radius: 15px 15px 0 0;
 }
 
-#products h2{
+/* Product Section Heading */
+#products h2 {
     font-weight: bolder;
 }
 
+/* Card Content Alignment */
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
+
+/* Button Styling */
 .btn-success {
     background-color: crimson;
     border: none;
@@ -57,17 +75,17 @@ body {
     background-color: green;
 }
 
+/* Responsive Card Styling */
 @media (max-width: 575px) {
-    .card{
+    .card {
         height: 300px;
         width: 250px;
-        /* object-fit: cover; */
         border-radius: 15px 15px 0 0;
         justify-self: center;
     }
 }
 
-/* Toggler Notification */
+/* Cart Notification Toggler */
 .cart-toggler {
     position: fixed;
     bottom: -50px; /* Initially hidden */
@@ -79,13 +97,11 @@ body {
     font-weight: bold;
     transition: bottom 0.5s ease-in-out;
 }
-
 .cart-toggler.show {
-    bottom: 20px; /* Slide up */
+    bottom: 20px;
 }
 
-
-
+/* Footer Styling */
 .footer {
     background-color: rgb(209, 113, 132);
     color: white;
@@ -93,44 +109,41 @@ body {
     margin-top: 40px;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .footer-title {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
-.footer .icons{
+.footer .icons {
     cursor: pointer;
 }
 
+/* Responsive Footer Styling */
 @media (max-width: 575px) {
     .footer-title {
         font-size: 1.3rem;
     }
 }
 
-
+/* Product Detail Section */
 #product-detail {
     display: none; /* Initially hidden */
     padding: 40px 0;
 }
-
 #product-detail img {
     max-width: 50%;
     border-radius: 15px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 #product-detail h2 {
     font-weight: bold;
     color: rgb(209, 113, 132);
 }
-
 #product-detail p {
     font-size: 1.1rem;
     color: #333;
 }
 
+/* Add to Cart Button */
 #add-to-cart-detail {
     background-color: crimson;
     border: none;
@@ -138,11 +151,11 @@ body {
     padding: 10px 20px;
     font-size: 1.2rem;
 }
-
 #add-to-cart-detail:hover {
     background-color: green;
 }
 
+/* Back to Products Button */
 #back-to-products {
     display: block;
     margin-bottom: 20px;
