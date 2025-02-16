@@ -87,7 +87,7 @@ body {
 /* Toggler Notification */
 .cart-toggler {
     position: fixed;
-    bottom: -50px; /* Initially hidden */
+    bottom: -100px; /* Initially hidden */
     right: 20px;
     background-color: crimson;
     color: white;
