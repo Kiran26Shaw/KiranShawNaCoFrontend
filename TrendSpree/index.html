@@ -10,36 +10,32 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <!-- Logo and Brand Name -->
+
+            <!-- brand name and logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="assets/images/logo.png" alt="Trend Spree Logo" class="logo">
                 <h2 class="ms-2">TrendSpree</h2>
             </a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar Links -->
+            <!-- navbar link -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
-                    <li class="nav-item">
-                        <a href="cart.html" class="nav-link">
-                            <i class="bi bi-cart"></i> View Cart (<span id="cart-count">0</span>)
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>  <!--home page-->
+                    <li class="nav-item"><a class="nav-link" href="index.html">Products</a></li>  <!--home page-->
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>  <!--categories page-->
+                    <li class="nav-item"><a href="cart.html" class="nav-link"><i class="bi bi-cart"></i> View Cart (<span id="cart-count">0</span>)</a></li>  <!--cart page-->
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Banner Section -->
+    <!-- banner section -->
     <section id="home" class="hero-section">
         <div>
             <h1>Welcome to Our Clothing Store</h1>
@@ -53,20 +49,13 @@
         <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4"></div>
     </section>
 
-    <!-- Product CCard Details Section (Hidden Initially) -->
+    <!-- Product Details Section (Hidden Initially) -->
     <section id="product-detail" class="container mt-5" style="display: none;">
-        <!-- Back to Products Button -->
-        <button id="back-to-products" class="btn btn-outline-danger mb-3">
-            <i class="bi bi-arrow-left"></i> Back to Products
-        </button>
-
+        <button id="back-to-products" class="btn btn-outline-danger mb-3"><i class="bi bi-arrow-left"></i> Back to Products</button>
         <div class="row">
-            <!-- Product Image -->
             <div class="col-md-6 text-center">
                 <img id="detail-image" class="img-fluid rounded" alt="Product Image">
             </div>
-
-            <!-- Product Details -->
             <div class="col-md-6">
                 <h2 id="detail-title"></h2>
                 <p id="detail-price" class="text-danger fs-4 fw-bold"></p>
@@ -76,18 +65,15 @@
         </div>
     </section>
 
-    <!-- Cart Notification -->
+    <!-- notification toggler -->
     <div id="cart-toggler" class="cart-toggler">Item added to cart!</div>
 
-    <!-- Footer Section -->
+    <!-- footer section -->
     <footer class="footer">
         <div class="container text-center py-4">
             <p class="footer-title">TrendSpree</p>
             <p>123 Fashion Street, New York, NY 10001</p>
-            <p class="icons">
-                <i class="bi bi-telephone-fill"></i> +1 234 567 890 | 
-                <i class="bi bi-envelope-at-fill"></i> support@trendspree.com
-            </p>
+            <p class="icons"><i class="bi bi-telephone-fill"></i> +1 234 567 890 | <i class="bi bi-envelope-at-fill"></i> support@trendspree.com</p>
             <p class="rights">© 2025 TrendSpree. All Rights Reserved.</p>
         </div>
     </footer>
