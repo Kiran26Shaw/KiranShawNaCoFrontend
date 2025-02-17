@@ -5,6 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch("https://fakestoreapi.com/products");
             const products = await response.json();
             displayProducts(products);
+            updateCartCount();
+
+            // Check if there's a last viewed product and show it
+            const lastViewedProductId = localStorage.getItem("lastViewedProduct");
+            if (lastViewedProductId) {
+                const product = products.find(p => p.id == lastViewedProductId);
+                if (product) {
+                    showProductDetail(product);
+                }
+            }
         } catch (error) {
             console.error("Error fetching products:", error);
         }
@@ -61,7 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const productDetail = document.getElementById("product-detail");
         const productListSection = document.getElementById("products");
 
-        // Dynamically display product details
+        // Store the last viewed product ID in localStorage
+        localStorage.setItem("lastViewedProduct", product.id);
+
         productDetail.innerHTML = `
             <div class="container mt-5">
                 <button id="back-to-products" class="btn btn-outline-danger mb-3">← Back to Products</button>
@@ -89,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("back-to-products").addEventListener("click", () => {
             productDetail.style.display = "none";
             productListSection.style.display = "block";
+            localStorage.removeItem("lastViewedProduct"); // Clear saved product when returning to list
         });
 
         productDetail.style.display = "block";
@@ -137,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchProducts();
     updateCartCount();
 });
+
 
 // Cart Page Functionality
 document.addEventListener("DOMContentLoaded", () => {
