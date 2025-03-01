@@ -1,3 +1,4 @@
+// Wait until the document is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     // Fetch product data from Fake Store API
     async function fetchProducts() {
@@ -7,10 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
             displayProducts(products);
             updateCartCount();
 
-            // Check if there's a last viewed product and show it
-            const lastViewedProductId = localStorage.getItem("lastViewedProduct");
-            if (lastViewedProductId) {
-                const product = products.find(p => p.id == lastViewedProductId);
+            // Check URL for product ID and show product detail if present
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get("product");
+            if (productId) {
+                const product = products.find(p => p.id == productId);
                 if (product) {
                     showProductDetail(product);
                 }
@@ -20,11 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // function to display products
+    // Function to display products on the page
     function displayProducts(products) {
         const productList = document.getElementById("product-list");
-        // Populate product list dynamically using map function
-        productList.innerHTML = "";
+        productList.innerHTML = ""; // Clear previous entries
         products.forEach(product => {
             productList.innerHTML += `
                 <div class="col">
@@ -50,29 +51,26 @@ document.addEventListener("DOMContentLoaded", () => {
         attachAddToCartEvent(); // Enable add-to-cart functionality
     }
 
+    // Function to handle product detail view using URL query parameters
     function attachProductDetailEvent(products) {
         document.querySelectorAll(".product-card").forEach(card => {
             card.addEventListener("click", (event) => {
                 if (event.target.classList.contains("add-to-cart")) {
-                    return;
+                    return; // Prevent triggering detail view when adding to cart
                 }
-
+                
                 const productId = event.currentTarget.dataset.id;
-                const product = products.find(p => p.id == productId);
-                showProductDetail(product);
+                window.location.search = `?product=${productId}`; // Update URL
             });
         });
     }
 
-    // function to show product card details
+    // Function to show product details
     function showProductDetail(product) {
         if (!product) return;
 
         const productDetail = document.getElementById("product-detail");
         const productListSection = document.getElementById("products");
-
-        // Store the last viewed product ID in localStorage
-        localStorage.setItem("lastViewedProduct", product.id);
 
         productDetail.innerHTML = `
             <div class="container mt-5">
@@ -99,17 +97,15 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         document.getElementById("back-to-products").addEventListener("click", () => {
-            productDetail.style.display = "none";
-            productListSection.style.display = "block";
-            localStorage.removeItem("lastViewedProduct"); // Clear saved product when returning to list
+            window.location.search = ""; // Clear URL query and return to product list
         });
 
         productDetail.style.display = "block";
         productListSection.style.display = "none";
-
-        attachAddToCartEvent(); // Ensure "Add to Cart" works inside product details
+        attachAddToCartEvent(); // Ensure "Add to Cart" works in detail view
     }
 
+    // Function to add items to cart
     function attachAddToCartEvent() {
         document.querySelectorAll(".add-to-cart").forEach(button => {
             button.addEventListener("click", (event) => {
@@ -134,12 +130,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // function to update cart count
+    // Function to update cart count in navbar
     function updateCartCount() {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         document.getElementById("cart-count").textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
     }
 
+    // Function to show cart notification
     function showCartNotification(title) {
         const cartToggler = document.getElementById("cart-toggler");
         cartToggler.textContent = `${title} added to cart!`;
@@ -147,9 +144,11 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => cartToggler.classList.remove("show"), 2000);
     }
 
-    fetchProducts();
-    updateCartCount();
+    fetchProducts(); // Load products on page load
+    updateCartCount(); // Update cart count on page load
 });
+
+
 
 
 // Cart Page Functionality
@@ -264,3 +263,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderCart();
 });
+
