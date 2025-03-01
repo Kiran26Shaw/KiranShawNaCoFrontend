@@ -94,11 +94,12 @@
                             ? data.filter(product => product.category.toLowerCase() === category.toLowerCase())
                             : data;
                         displayProducts(filteredProducts);
+                        checkForProductInURL(data); // Check if a product is in the URL
                     })
                     .catch(error => console.error("Error fetching products:", error));
             }
 
-            // function to display products
+            // Display products in the UI
             function displayProducts(products) {
                 productList.innerHTML = "";
                 products.forEach(product => {
@@ -120,11 +121,10 @@
                     `;
                     productList.appendChild(productCard);
                 });
-
-                attachEventListeners();
+                attachEventListeners(); // Attach event listeners to buttons
             }
 
-            // Attach event listeners to buttons
+            // Attach event listeners to buttons and product cards
             function attachEventListeners() {
                 document.querySelectorAll(".add-to-cart").forEach(button => {
                     button.addEventListener("click", event => {
@@ -139,12 +139,13 @@
                 document.querySelectorAll(".product-card").forEach(card => {
                     card.addEventListener("click", event => {
                         const productId = event.currentTarget.getAttribute("data-id");
+                        window.history.pushState({}, "", `?product=${productId}`); // Update URL
                         showProductDetail(productId);
                     });
                 });
             }
 
-            // function to show product details
+            // Fetch and display product details
             function showProductDetail(productId) {
                 fetch(`https://fakestoreapi.com/products/${productId}`)
                     .then(response => response.json())
@@ -154,8 +155,8 @@
                         document.getElementById("detail-description").textContent = product.description;
                         document.getElementById("detail-price").textContent = `$${product.price.toFixed(2)}`;
 
-                        productList.classList.add("d-none");
-                        productDetail.classList.remove("d-none");
+                        productList.classList.add("d-none"); // Hide product list
+                        productDetail.classList.remove("d-none"); // Show product detail
 
                         document.getElementById("add-to-cart-detail").onclick = () => {
                             addToCart(product.id, product.title, product.price, product.image);
@@ -164,33 +165,44 @@
                     .catch(error => console.error("Error fetching product details:", error));
             }
 
-            // back to products functionality
+            // Check if a product is specified in the URL and display it
+            function checkForProductInURL(products) {
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get("product");
+                if (productId) {
+                    const productExists = products.some(product => product.id == productId);
+                    if (productExists) {
+                        showProductDetail(productId);
+                    }
+                }
+            }
+
+            // Back to products functionality
             backToProducts.addEventListener("click", () => {
-                productList.classList.remove("d-none");
-                productDetail.classList.add("d-none");
+                productList.classList.remove("d-none"); // Show product list
+                productDetail.classList.add("d-none"); // Hide product detail
+                window.history.pushState({}, "", window.location.pathname); // Remove query parameter
             });
 
+            // Add product to cart
             function addToCart(id, title, price, image) {
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
                 let existingItem = cart.find(item => item.id === id);
                 if (existingItem) {
                     existingItem.quantity += 1;
                 } else {
                     cart.push({ id, title, price, image, quantity: 1 });
                 }
-
                 localStorage.setItem("cart", JSON.stringify(cart));
                 updateCartCount();
-
                 showToaster("Item Added to Cart!");
             }
 
+            // Show toast notification
             function showToaster(message) {
                 const toaster = document.getElementById("card-toggler");
                 toaster.textContent = message;
                 toaster.classList.add("show");
-
                 setTimeout(() => {
                     toaster.classList.add("hide");
                     setTimeout(() => {
@@ -199,13 +211,14 @@
                 }, 2000);
             }
 
-            // function to update cart count
+            // Update cart count display
             function updateCartCount() {
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
                 let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
                 cartCount.textContent = totalItems;
             }
 
+            // Filter products by category
             filterButtons.forEach(button => {
                 button.addEventListener("click", () => {
                     const category = button.getAttribute("data-category");
@@ -213,13 +226,12 @@
                 });
             });
 
-            fetchProducts();
-            updateCartCount();
+            fetchProducts(); // Initial fetch of products
+            updateCartCount(); // Initial update of cart count
         });
-
-
-
     </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
