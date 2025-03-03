@@ -156,3 +156,39 @@ body {
 #empty-cart-toggler {
     background-color: crimson; 
 }
+
+
+
+
+/* Quantity Button Styling */
+.quantity-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-container button {
+    border: none;
+    background-color: #d17184;
+    color: white;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.quantity-container button:hover {
+    background-color: #b35d6f;
+}
+
+.quantity-container input {
+    width: 50px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
