@@ -48,7 +48,9 @@ body {
     box-shadow: 0px 4px 15px rgb(209, 113, 132);
 }
 .card img {
-    height: 300px;
+    height: 100%;
+    width: 50%;
+    align-self: center;
     border-radius: 15px 15px 0 0;
 }
 .card-body {
