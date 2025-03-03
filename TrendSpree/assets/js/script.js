@@ -150,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 // Cart Page Functionality
 document.addEventListener("DOMContentLoaded", () => {
     const cartItemsContainer = document.getElementById("cart-items");
@@ -161,11 +160,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearCartToggler = document.getElementById("clear-cart-toggler");
     const emptyCartToggler = document.getElementById("empty-cart-toggler");
     const clearCartBtn = document.getElementById("clear-cart-btn");
-    const cartCountElement = document.getElementById("cart-count"); // Navbar cart count
+    const cartCountElement = document.getElementById("cart-count");
+    const checkoutBtn = document.querySelector(".checkout-btn");
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // function to show toggler
+    checkoutBtn.addEventListener("click", () => {
+        alert("Checkout failed");
+    });
+
+    // Function to show toggler messages
     function showToggler(message, togglerElement) {
         togglerElement.textContent = message;
         togglerElement.style.display = "block";
@@ -174,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1500);
     }
 
+    // Function to render cart
     function renderCart() {
         cartItemsContainer.innerHTML = "";
         let subtotal = 0;
@@ -193,8 +198,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </td>
                 <td>
-                    <input type="number" class="form-control quantity-input" data-id="${item.id}" min="1" value="${item.quantity}">
+                    <div class="quantity-container">
+                        <button class="decrease-qty" data-id="${item.id}">−</button>
+                        <input type="number" class="quantity-input" data-id="${item.id}" min="1" value="${item.quantity}" readonly>
+                        <button class="increase-qty" data-id="${item.id}">+</button>
+                    </div>
                 </td>
+
                 <td>$${itemTotal.toFixed(2)}</td>
             `;
 
@@ -206,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
         attachEventListeners();
     }
 
-    // function to update cart summary
+    // Function to update cart summary
     function updateSummary(subtotal) {
         const tax = subtotal * 0.175; // 17.5% tax
         const total = subtotal + tax;
@@ -216,18 +226,35 @@ document.addEventListener("DOMContentLoaded", () => {
         totalElement.textContent = `$${total.toFixed(2)}`;
     }
 
-    // fucntion to attach event listeners to elements
+    // Function to attach event listeners
     function attachEventListeners() {
-        document.querySelectorAll(".quantity-input").forEach(input => {
-            input.addEventListener("change", (event) => {
+        document.querySelectorAll(".increase-qty").forEach(button => {
+            button.addEventListener("click", (event) => {
                 const id = event.target.dataset.id;
-                const newQuantity = parseInt(event.target.value);
-                if (newQuantity > 0) {
-                    cart = cart.map(item => item.id === id ? { ...item, quantity: newQuantity } : item);
-                    localStorage.setItem("cart", JSON.stringify(cart));
-                    renderCart();
-                    showToggler("Quantity Updated!", cartToggler);
-                }
+                cart = cart.map(item => {
+                    if (item.id === id) {
+                        item.quantity++;
+                    }
+                    return item;
+                });
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderCart();
+                showToggler("Quantity Updated!", cartToggler);
+            });
+        });
+
+        document.querySelectorAll(".decrease-qty").forEach(button => {
+            button.addEventListener("click", (event) => {
+                const id = event.target.dataset.id;
+                cart = cart.map(item => {
+                    if (item.id === id && item.quantity > 1) {
+                        item.quantity--;
+                    }
+                    return item;
+                });
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderCart();
+                showToggler("Quantity Updated!", cartToggler);
             });
         });
 
@@ -243,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // function to update cart count
+    // Function to update cart count in navbar
     function updateCartCount() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartCountElement.textContent = totalItems;
@@ -263,4 +290,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderCart();
 });
+
 
