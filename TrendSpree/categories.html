@@ -49,14 +49,16 @@
     </div>
 
     <!-- Product Detail Section (Hidden Initially) -->
-    <div id="product-detail" class="product-detail-container d-none">
-        <button id="back-to-products" class="btn btn-secondary mb-3">← Back to Products</button>
-        <div class="card product-detail-card">
-            <img id="detail-image" src="" alt="" class="detail-img">
-            <div class="card-body">
+    <div id="product-detail" class="container mt-5 d-none">
+        <button id="back-to-products" class="btn btn-secondary mb-3"><i class="bi bi-arrow-left"></i> Back to Products</button>
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img id="detail-image" src="" alt="" class="detail-img">
+            </div>
+            <div class="col-md-6">
                 <h2 id="detail-title" class="card-title"></h2>
+                <p id="detail-price" class="text-danger fs-4 fw-bold"></p>
                 <p id="detail-description" class="card-text"></p>
-                <p id="detail-price" class="price"></p>
                 <button id="add-to-cart-detail" class="btn btn-primary">Add to Cart</button>
             </div>
         </div>
@@ -228,10 +230,26 @@
 
             fetchProducts(); // Initial fetch of products
             updateCartCount(); // Initial update of cart count
+
+            // Handling product click and showing detail view (Without Altering Current Functionality)
+            const productCards = document.querySelectorAll(".card");
+            const productDetailContainer = document.querySelector(".product-detail-container");
+            
+            productCards.forEach((card) => {
+                card.addEventListener("click", () => {
+                    productDetailContainer.style.display = "block";
+                    productList.style.display = "none"; // Hide product grid
+                });
+            });
+
+            backToProducts.addEventListener("click", () => {
+                productDetailContainer.style.display = "none";
+                productList.style.display = "flex"; // Show product grid
+            });
+
         });
+
     </script>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
 </body>
 </html>
